@@ -1,7 +1,25 @@
-<nav>
-	{% for item in site.data.nav %}
-		<a href="{{ item.link }}" {% if page.url == item.link %} class="current-nav" {% endif %}>
-			{{ item.name }}
-		</a>
-	{% endfor %}
+<nav class="navbar navbar-expand-sm navbar-default">
+	<a class="navbar-brand" href="{{ site.baseurl }}/">GoGraameen</a>
+	<ul class="navbar-nav mr-auto">
+		{% for item in site.data.nav %}
+			{% if item.align == "left" %}
+				<li class="nav-item"><a class="nav-link {% if page.url == item.link %} current-nav {% endif %}" href="{{ item.link }}">{{ item.name }}</a></li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+	<ul class="navbar-nav mx-auto">
+		<li class="nav-item"><a class="nav-link" style="font-size: 12px; padding-top: 10px;">Current Number of orders: XXXX</a></li>
+		{% for item in site.data.nav %}
+			{% if item.align == "center" %}
+				<li class="nav-item"><a class="nav-link {% if page.url == item.link %} current-nav {% endif %}" href="{{ item.link }}">{{ item.name }}</a></li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+	<ul class="navbar-nav ml-auto">
+		{% for item in site.data.nav %}
+			{% if item.align == "right" %}
+				<li class="nav-item"><a class="nav-link {% if page.url == item.link %} current-nav {% endif %}" href="{{ item.link }}">{{ item.name }}</a></li>
+			{% endif %}
+		{% endfor %}
+	</ul>
 </nav>
