@@ -1,0 +1,18 @@
+# Site settings
+title: GoGraameen
+header-img: img/home-bg.jpg
+email: gograameen@gmail.com
+description: GoGraameen's own handcrafted eco-friendly products
+baseurl: ""
+url: "http://gograameen.github.io"
+twitter_username: gograameen
+github_username:  gograameen
+facebook_username: gograameen
+linkedin_username: gograameen
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]  
+plugins_dir: [jekyll-sitemap]
