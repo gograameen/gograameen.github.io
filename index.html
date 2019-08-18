@@ -3,5 +3,34 @@ layout: default-layout
 description: GoGraameen Homepage
 title: Home
 ---
-<h1>Hello World!</h1>
-<h2>{{ "hi" | capitalize }}</h2>
+
+	<div class="row">
+		{% for item in site.data.about %}
+			{% if item.name == "About Us" %}
+				<h1>{{ item.name | upcase }}</h1>
+				<p>{{ item.text }}</p>
+			{% endif %}
+		{% endfor %}
+	</div>
+
+
+	<div class="row" style="padding-top: 2%;">
+		<h1>{{ "The team" | upcase }}</h1>
+		{% for item in site.data.team %}
+			<div class="row">
+				<div class="col-xs-6">
+					<figure style="padding-left: 10%;">
+						<img src="/assets/img/team/empty-team.png" alt="{{ item.name }}" style="height:200px; margin-left:-15px;">
+						<!-- <figcaption>contact by KD from the Noun Project</figcaption> -->
+					</figure>
+				</div>
+				<div class="col">
+					<h3>{{ item.name }}</h3>
+					<p>{{ item.desc }}</p>
+					<span>Email: <a href="mailto:{{ item.email}}?Subject=Hello%20again" target="_top">{{ item.email }}</a></span>
+					&nbsp;&nbsp;&nbsp;
+					<span>Contact: {{item.contact}}</span>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
